@@ -1,0 +1,38 @@
+.icon {
+    font-size: 2em;
+}
+
+.main.container {
+    margin-top: 5em;
+}
+
+.customfooter {
+    margin-left: 45em;
+    padding-top: 20rem;
+    color: gray;
+    /*padding-bottom: 25rem;*/
+}
+
+#delete {
+    display: inline;
+}
+
+body {
+    background-color: #FFFFFF;
+     }
+.ui.menu .item img.logo {
+    margin-right: 1.5em;
+}
+.main.container {
+    margin-top: 7em;
+}
+.wireframe {
+    margin-top: 2em;
+}
+.ui.footer.segment {
+    margin: 5em 0em 0em;
+    padding: 5em 0em;
+}
+i.icon {
+    font-size: 2em;
+}

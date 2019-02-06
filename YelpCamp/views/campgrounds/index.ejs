@@ -1,0 +1,59 @@
+<%- include("../partials/header") %>
+
+<% if(!currentUser) { %>
+<div class="container">
+    <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4><strong><a href="/login">Sign In</a></strong> to publish campgrounds, or <strong><a href="/register">Sign Up</a></strong> if you already don't have a profile</h4>
+    </div>
+</div>
+<% } else { %>
+<% if(currentUser && currentUser.isAdmin){ %>
+        <div class="container">
+            <div class="alert alert-warning alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4>You are currently logged in with admin privileges!</h4>
+            </div>
+        </div>
+        <% } %>
+<% } %>
+<div class=container>
+  <% if(noMatch !== null) { %>
+  <div class="alert alert-danger" role="alert">
+        <%= noMatch %>
+   </div>
+  <% } %>
+</div>
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1><small><span class="glyphicon glyphicon-tent"></span></small> Welcome to YelpCamp!</h1>
+            <p>View our hand-picked campgrounds from all over the world</p>
+            <span>
+                <% if(!currentUser){ %>
+                <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Campground</a>
+                <% } else { %>
+                <a class="btn btn-success btn-lg" href="/campgrounds/new">Add New Campground</a>
+                <% } %>
+            </span>
+        </div>
+    </header>
+    
+    <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+        <% campgrounds.forEach(function(campground){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                  <img src="<%= campground.image %>">
+                  <div class="caption">
+                      <h4><%= campground.name %></h4>
+                  </div>
+                  <p>
+                      <a href="campgrounds/<%= campground._id %>/" class="btn btn-md btn-info">More info</a>
+                  </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>

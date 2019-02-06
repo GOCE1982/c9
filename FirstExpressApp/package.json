@@ -1,0 +1,15 @@
+{
+  "name": "fistexpressapp",
+  "version": "1.0.0",
+  "description": "DemoJSONapp",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gotse",
+  "license": "ISC",
+  "dependencies": {
+    "cat-me": "^1.0.3",
+    "express": "^4.16.2"
+  }
+}
